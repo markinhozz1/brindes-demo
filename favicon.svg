@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Sua Marca Brindes</title>
+  <rect width="64" height="64" rx="14" fill="#1b2430"/>
+  <rect x="14" y="28" width="36" height="24" rx="3" fill="#e8613c"/>
+  <rect x="11" y="20" width="42" height="10" rx="3" fill="#f39a6f"/>
+  <rect x="29" y="20" width="6" height="32" fill="#f7f3ec"/>
+  <path d="M32 20c-4-8-13-9-13-3 0 4 7 4 13 3zM32 20c4-8 13-9 13-3 0 4-7 4-13 3z" fill="none" stroke="#f7f3ec" stroke-width="3" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sua Marca Brindes — Catálogo de brindes corporativos (demonstração)</title>
+  <meta name="description" content="Demonstração de site para empresa de brindes corporativos: catálogo por categorias, sem preços e sem carrinho, com lista para solicitar orçamento.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#1b2430">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Sua Marca Brindes (demonstração)">
+  <meta property="og:title" content="Sua Marca Brindes — Catálogo de brindes corporativos">
+  <meta property="og:description" content="Página de demonstração: catálogo de brindes personalizáveis por categoria, sem preços, com lista para solicitar orçamento.">
+  <!-- Sem domínio definido: URL relativa. Trocar por URL absoluta (https://dominio-final/og-image.png) ao publicar. -->
+  <meta property="og:url" content="https://brindes-demo.vercel.app/">
+  <meta property="og:image" content="https://brindes-demo.vercel.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ilustração de brindes (caneca, garrafa, caderno e caneta) com o texto Sua Marca Brindes">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/outfit-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/outfit-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/outfit-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="demo-banner" role="region" aria-label="Aviso de demonstração">
+    <p><strong>Demonstração.</strong> Empresa fictícia; nenhum produto é vendido e nenhum formulário envia dados.</p>
+  </div>
+
+  <header class="site-header" id="topo">
+    <div class="wrap header-inner">
+      <a class="brand" href="#inicio" aria-label="Sua Marca Brindes — início">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#i-logo"/></svg>
+        <span>Sua Marca <b>Brindes</b></span>
+      </a>
+      <nav class="main-nav" aria-label="Seções">
+        <ul>
+          <li><a href="#catalogo">Catálogo</a></li>
+          <li><a href="#como-funciona">Como funciona</a></li>
+          <li><a href="#diferenciais">Diferenciais</a></li>
+          <li><a href="#faq">Dúvidas</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="btn btn-quote" id="open-quote" aria-controls="quote-panel" aria-haspopup="dialog">
+        <span>Orçamento</span>
+        <span class="count" id="quote-count" aria-hidden="true">0</span>
+        <span class="sr-only" id="quote-count-sr">, nenhum item na lista</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Brindes corporativos personalizados</p>
+          <h1 id="hero-title">Brindes com a sua marca para equipes, clientes e eventos</h1>
+          <p class="lead">Navegue pelo catálogo, monte uma lista com os itens de interesse e solicite um orçamento. Os valores são informados no retorno, conforme produto, quantidade e personalização.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#catalogo">Ver catálogo</a>
+            <a class="btn btn-ghost" href="#como-funciona">Como funciona</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 360 300" focusable="false">
+            <circle cx="190" cy="150" r="128" fill="#efe6d8"/>
+            <circle cx="290" cy="58" r="22" fill="#9cc9c2"/>
+            <circle cx="54" cy="236" r="14" fill="#e0b34a"/>
+            <g transform="translate(40 92) scale(1.25)"><use href="#i-caderno" width="120" height="120"/></g>
+            <g transform="translate(170 52) scale(1.3)"><use href="#i-garrafa" width="120" height="120"/></g>
+            <g transform="translate(108 140) scale(1.25)"><use href="#i-caneca" width="120" height="120"/></g>
+            <g transform="translate(232 150) scale(1.05)"><use href="#i-caneta" width="120" height="120"/></g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="section catalog" id="catalogo" aria-labelledby="catalogo-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Catálogo</p>
+          <h2 id="catalogo-title">Escolha os produtos</h2>
+          <p>Sem preços e sem carrinho: adicione os itens à lista de orçamento e envie seu pedido de cotação.</p>
+        </div>
+
+        <div class="filters" role="group" aria-label="Filtrar produtos por categoria">
+          <button type="button" class="chip" data-filter="todos" aria-pressed="true">Todos</button>
+          <button type="button" class="chip" data-filter="canecas" aria-pressed="false">Canecas e copos</button>
+          <button type="button" class="chip" data-filter="garrafas" aria-pressed="false">Garrafas</button>
+          <button type="button" class="chip" data-filter="cadernos" aria-pressed="false">Cadernos</button>
+          <button type="button" class="chip" data-filter="canetas" aria-pressed="false">Canetas</button>
+          <button type="button" class="chip" data-filter="mochilas" aria-pressed="false">Mochilas e bolsas</button>
+          <button type="button" class="chip" data-filter="kits" aria-pressed="false">Kits</button>
+          <button type="button" class="chip" data-filter="tecnologia" aria-pressed="false">Tecnologia</button>
+        </div>
+        <p class="filter-status" id="filter-status" role="status" aria-live="polite">Mostrando todos os produtos.</p>
+
+        <ul class="grid" id="product-grid">
+          <li class="card" data-cat="canecas" data-id="caneca-ceramica">
+            <div class="card-art art-coral"><svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#i-caneca"/></svg></div>
+            <div class="card-body">
+              <p class="card-cat">Canecas e copos</p>
+              <h3>Caneca de cerâmica</h3>
+              <p>Caneca clássica para escritório, com área para impressão da sua logo.</p>
+              <button type="button" class="btn btn-add" data-add>Solicitar orçamento</button>
+            </div>
+          </li>
+          <li class="card" data-cat="canecas" data-id="copo-termico">
+            <div class="card-art art-coral"><svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#i-copo"/></svg></div>
+            <div class="card-body">
+              <p class="card-cat">Canecas e copos</p>
+              <h3>Copo térmico com tampa</h3>
+              <p>Copo de parede dupla com tampa, para bebidas quentes ou frias no dia a dia.</p>
+              <button type="button" class="btn btn-add" data-add>Solicitar orçamento</button>
+            </div>
+          </li>
+          <li class="card" data-cat="garrafas" data-id="garrafa-aluminio">
+            <div class="card-art art-teal"><svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#i-garrafa"/></svg></div>
+            <div class="card-body">
+              <p class="card-cat">Garrafas</p>
+              <h3>Garrafa de alumínio</h3>
+              <p>Garrafa reutilizável com tampa rosqueável, ideal para eventos e ações internas.</p>
+              <button type="button" class="btn btn-add" data-add>Solicitar orçamento</button>
+            </div>
+          </li>
+          <li class="card" data-cat="garrafas" data-id="squeeze">
+            <div class="card-art art-teal"><svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#i-squeeze"/></svg></div>
+            <div class="card-body">
+              <p class="card-cat">Garrafas</p>
+              <h3>Squeeze esportivo</h3>
+              <p>Squeeze leve com bico e alça, pensado para corridas, academias e feiras.</p>
+              <button type="button" class="btn btn-add" data-add>Solicitar orçamento</button>
+            </div>
+          </li>
+          <li class="card" data-cat="garrafas" data-id="garrafa-termica">
+            <div class="card-art art-teal"><svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#i-termica"/></svg></div>
+            <div class="card-body">
+              <p class="card-cat">Garrafas</p>
+              <h3>Garrafa térmica de inox</h3>
+              <p>Garrafa de parede dupla com tampa-copo, para manter a temperatura da bebida.</p>
+              <button type="button" class="btn btn-add" data-add>Solicitar orçamento</button>
+            </div>
+          </li>
+          <li class="card" data-cat="cadernos" data-id="caderno-capa-dura">
+            <div class="card-art art-sand"><svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#i-caderno"/></svg></div>
+            <div class="card-body">
+              <p class="card-cat">Cadernos</p>
+              <h3>Caderno capa dura</h3>
+              <p>Caderno com elástico e marcador de página, com a marca gravada na capa.</p>
+              <button type="button" class="btn btn-add" data-add>Solicitar orçamento</button>
+            </div>
+          </li>
+          <li class="card" data-cat="cadernos" data-id="bloco-anotacoes">
+            <div class="card-art art-sand"><svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#i-bloco"/></svg></div>
+            <div class="card-body">
+              <p class="card-cat">Cadernos</p>
+              <h3>Bloco de anotações</h3>
+              <p>Bloco compacto para reuniões, treinamentos e kits de recepção.</p>
+              <button type="button" class="btn btn-add" data-add>Solicitar orçamento</button>
+            </div>
+          </li>
+          <li class="card" data-cat="canetas" data-id="caneta-metal">
+            <div class="card-art art-mustard"><svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#i-caneta"/></svg></div>
+            <div class="card-body">
+              <p class="card-cat">Canetas</p>
+              <h3>Caneta metálica</h3>
+              <p>Caneta esferográfica de corpo metálico, com gravação da logo.</p>
+              <button type="button" class="btn btn-add" data-add>Solicitar orçamento</button>
+            </div>
+          </li>
+          <li class="card" data-cat="canetas" data-id="caneta-bambu">
+            <div class="card-art art-mustard"><svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#i-caneta-bambu"/></svg></div>
+            <div class="card-body">
+              <p class="card-cat">Canetas</p>
+              <h3>Caneta de bambu</h3>
+              <p>Opção com corpo em bambu para ações com apelo sustentável.</p>
+              <button type="button" class="btn btn-add" data-add>Solicitar orçamento</button>
+            </div>
+          </li>
+          <li class="card" data-cat="mochilas" data-id="mochila-notebook">
+            <div class="card-art art-ink"><svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#i-mochila"/></svg></div>
+            <div class="card-body">
+              <p class="card-cat">Mochilas e bolsas</p>
+              <h3>Mochila para notebook</h3>
+              <p>Mochila com compartimento acolchoado e bolsos organizadores.</p>
+              <button type="button" class="btn btn-add" data-add>Solicitar orçamento</button>
+            </div>
+          </li>
+          <li class="card" data-cat="mochilas" data-id="ecobag">
+            <div class="card-art art-ink"><svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#i-ecobag"/></svg></div>
+            <div class="card-body">
+              <p class="card-cat">Mochilas e bolsas</p>
+              <h3>Ecobag de algodão</h3>
+              <p>Sacola reutilizável com alças longas e área ampla para estampa.</p>
+              <button type="button" class="btn btn-add" data-add>Solicitar orçamento</button>
+            </div>
+          </li>
+          <li class="card" data-cat="kits" data-id="kit-boas-vindas">
+            <div class="card-art art-coral"><svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#i-kit"/></svg></div>
+            <div class="card-body">
+              <p class="card-cat">Kits</p>
+              <h3>Kit boas-vindas</h3>
+              <p>Caixa montada com itens escolhidos para receber novos colaboradores.</p>
+              <button type="button" class="btn btn-add" data-add>Solicitar orçamento</button>
+            </div>
+          </li>
+          <li class="card" data-cat="kits" data-id="kit-escritorio">
+            <div class="card-art art-coral"><svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#i-kit-escritorio"/></svg></div>
+            <div class="card-body">
+              <p class="card-cat">Kits</p>
+              <h3>Kit escritório</h3>
+              <p>Combinação de caderno, caneta e caneca em embalagem personalizada.</p>
+              <button type="button" class="btn btn-add" data-add>Solicitar orçamento</button>
+            </div>
+          </li>
+          <li class="card" data-cat="tecnologia" data-id="power-bank">
+            <div class="card-art art-teal"><svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#i-powerbank"/></svg></div>
+            <div class="card-body">
+              <p class="card-cat">Tecnologia</p>
+              <h3>Carregador portátil</h3>
+              <p>Bateria portátil para celular, com espaço para a marca na lateral.</p>
+              <button type="button" class="btn btn-add" data-add>Solicitar orçamento</button>
+            </div>
+          </li>
+          <li class="card" data-cat="tecnologia" data-id="pen-drive">
+            <div class="card-art art-teal"><svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#i-pendrive"/></svg></div>
+            <div class="card-body">
+              <p class="card-cat">Tecnologia</p>
+              <h3>Pen drive personalizado</h3>
+              <p>Pen drive em formato giratório, útil para materiais de eventos.</p>
+              <button type="button" class="btn btn-add" data-add>Solicitar orçamento</button>
+            </div>
+          </li>
+          <li class="card" data-cat="tecnologia" data-id="carregador-sem-fio">
+            <div class="card-art art-teal"><svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#i-wireless"/></svg></div>
+            <div class="card-body">
+              <p class="card-cat">Tecnologia</p>
+              <h3>Base de carregamento sem fio</h3>
+              <p>Base de mesa para celulares compatíveis, com a logo no centro.</p>
+              <button type="button" class="btn btn-add" data-add>Solicitar orçamento</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section steps" id="como-funciona" aria-labelledby="como-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Como funciona</p>
+          <h2 id="como-title">Do catálogo à entrega</h2>
+        </div>
+        <ol class="step-list">
+          <li>
+            <span class="step-n" aria-hidden="true">1</span>
+            <h3>Escolha</h3>
+            <p>Selecione os produtos no catálogo e adicione-os à lista de orçamento.</p>
+          </li>
+          <li>
+            <span class="step-n" aria-hidden="true">2</span>
+            <h3>Personalização</h3>
+            <p>Informe quantidades, cores e a técnica de gravação ou impressão desejada.</p>
+          </li>
+          <li>
+            <span class="step-n" aria-hidden="true">3</span>
+            <h3>Aprovação da arte</h3>
+            <p>Você recebe uma prova digital com a aplicação da marca para revisar e aprovar.</p>
+          </li>
+          <li>
+            <span class="step-n" aria-hidden="true">4</span>
+            <h3>Entrega</h3>
+            <p>Após a aprovação, a produção é iniciada e a entrega segue o prazo combinado no orçamento.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section features" id="diferenciais" aria-labelledby="dif-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Diferenciais</p>
+          <h2 id="dif-title">Por que pedir seu orçamento aqui</h2>
+        </div>
+        <ul class="feature-list">
+          <li>
+            <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><use href="#f-chat"/></svg>
+            <h3>Atendimento consultivo</h3>
+            <p>Ajuda para escolher itens de acordo com o público, a ocasião e o orçamento disponível.</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><use href="#f-art"/></svg>
+            <h3>Prova da arte antes da produção</h3>
+            <p>Nada é produzido sem a sua aprovação da aplicação da marca.</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><use href="#f-grid"/></svg>
+            <h3>Categorias variadas</h3>
+            <p>Itens de escritório, garrafas, bolsas, tecnologia e kits em um só pedido.</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><use href="#f-box"/></svg>
+            <h3>Kits montados</h3>
+            <p>Possibilidade de reunir vários itens em uma embalagem personalizada.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="wrap narrow">
+        <div class="section-head">
+          <p class="eyebrow">Dúvidas frequentes</p>
+          <h2 id="faq-title">Perguntas frequentes</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Por que o site não mostra valores?</summary>
+            <p>O valor de um brinde depende da quantidade, do modelo, das cores e da técnica de personalização. Por isso, os valores são enviados no orçamento.</p>
+          </details>
+          <details>
+            <summary>Existe quantidade mínima?</summary>
+            <p>A quantidade mínima varia de produto para produto e é informada no retorno do orçamento.</p>
+          </details>
+          <details>
+            <summary>Posso pedir orçamento de vários produtos de uma vez?</summary>
+            <p>Sim. Adicione todos os itens à lista de orçamento e envie um único pedido.</p>
+          </details>
+          <details>
+            <summary>Preciso enviar a arte pronta?</summary>
+            <p>Basta enviar a logo em boa resolução. A aplicação no produto é apresentada em uma prova digital para aprovação.</p>
+          </details>
+          <details>
+            <summary>Qual é o prazo de entrega?</summary>
+            <p>O prazo depende do produto, da quantidade e da personalização, e é combinado no orçamento.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <p class="brand brand-footer">
+          <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#i-logo"/></svg>
+          <span>Sua Marca <b>Brindes</b></span>
+        </p>
+        <p>Empresa fictícia criada para demonstração de layout.</p>
+      </div>
+      <div>
+        <h2 class="footer-title">Contato (exemplo)</h2>
+        <ul class="footer-contact">
+          <li>Telefone: (00) 0000-0000</li>
+          <li>E-mail: contato@suamarca.example</li>
+          <li>Endereço: Rua Exemplo, s/n — Cidade/UF</li>
+          <li>CNPJ: 00.000.000/0000-00</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="footer-title">Navegação</h2>
+        <ul class="footer-nav">
+          <li><a href="#catalogo">Catálogo</a></li>
+          <li><a href="#como-funciona">Como funciona</a></li>
+          <li><a href="#faq">Dúvidas</a></li>
+          <li><a href="#topo">Voltar ao topo</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="wrap footer-note">Página de demonstração. Os contatos acima são fictícios e nenhum dado é coletado.</p>
+  </footer>
+
+  <div class="quote-panel" id="quote-panel" role="dialog" aria-modal="true" aria-labelledby="quote-title" aria-describedby="quote-desc" hidden>
+    <div class="quote-backdrop" data-close></div>
+    <div class="quote-card" tabindex="-1">
+      <div class="quote-head">
+        <h2 id="quote-title">Lista de orçamento</h2>
+        <button type="button" class="icon-btn" id="close-quote" aria-label="Fechar lista de orçamento">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <p id="quote-desc" class="quote-desc">Revise os itens e preencha o formulário. Nesta demonstração nada é enviado.</p>
+      <p class="quote-empty" id="quote-empty">Sua lista está vazia. Use “Solicitar orçamento” nos produtos do catálogo.</p>
+      <ul class="quote-items" id="quote-items" aria-label="Itens na lista de orçamento"></ul>
+
+      <form class="quote-form" id="quote-form" novalidate>
+        <fieldset>
+          <legend>Seus dados</legend>
+          <div class="field">
+            <label for="f-nome">Nome</label>
+            <input id="f-nome" name="nome" type="text" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="f-empresa">Empresa</label>
+            <input id="f-empresa" name="empresa" type="text" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="f-email">E-mail</label>
+            <input id="f-email" name="email" type="email" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="f-fone">Telefone</label>
+            <input id="f-fone" name="telefone" type="text" inputmode="tel" autocomplete="off" placeholder="(00) 0000-0000">
+          </div>
+          <div class="field">
+            <label for="f-msg">Quantidades e observações</label>
+            <textarea id="f-msg" name="mensagem" rows="3" placeholder="Ex.: quantidade aproximada de cada item, cores, data do evento"></textarea>
+          </div>
+        </fieldset>
+        <button type="submit" class="btn btn-primary btn-block">Enviar pedido de orçamento</button>
+        <p class="form-result" id="form-result" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <p class="sr-only" id="live" aria-live="polite" aria-atomic="true"></p>
+
+  <svg xmlns="http://www.w3.org/2000/svg" class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-logo" viewBox="0 0 64 64">
+      <rect width="64" height="64" rx="14" fill="#1b2430"/>
+      <rect x="14" y="28" width="36" height="24" rx="3" fill="#e8613c"/>
+      <rect x="11" y="20" width="42" height="10" rx="3" fill="#f39a6f"/>
+      <rect x="29" y="20" width="6" height="32" fill="#f7f3ec"/>
+      <path d="M32 20c-4-8-13-9-13-3 0 4 7 4 13 3zM32 20c4-8 13-9 13-3 0 4-7 4-13 3z" fill="none" stroke="#f7f3ec" stroke-width="3" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-caneca" viewBox="0 0 120 120">
+      <ellipse cx="56" cy="98" rx="34" ry="6" fill="#1b2430" opacity=".12"/>
+      <path d="M78 46h8a14 14 0 0 1 0 28h-8" fill="none" stroke="#1b2430" stroke-width="6"/>
+      <rect x="26" y="34" width="56" height="62" rx="8" fill="#fff" stroke="#1b2430" stroke-width="3"/>
+      <rect x="26" y="34" width="56" height="10" rx="5" fill="#f7f3ec"/>
+      <circle cx="54" cy="68" r="12" fill="#e8613c"/>
+      <path d="M54 60l8 8-8 8-8-8z" fill="#fff"/>
+    </symbol>
+    <symbol id="i-copo" viewBox="0 0 120 120">
+      <ellipse cx="60" cy="102" rx="26" ry="5" fill="#1b2430" opacity=".12"/>
+      <path d="M36 32h48l-6 68H42z" fill="#2f6f73"/>
+      <rect x="32" y="22" width="56" height="12" rx="5" fill="#1b2430"/>
+      <rect x="52" y="16" width="16" height="8" rx="3" fill="#1b2430"/>
+      <rect x="42" y="56" width="36" height="18" rx="4" fill="#9cc9c2"/>
+    </symbol>
+    <symbol id="i-garrafa" viewBox="0 0 120 120">
+      <ellipse cx="60" cy="106" rx="22" ry="4" fill="#1b2430" opacity=".12"/>
+      <rect x="50" y="8" width="20" height="14" rx="4" fill="#1b2430"/>
+      <path d="M50 22h20v8c10 4 14 10 14 18v50a8 8 0 0 1-8 8H44a8 8 0 0 1-8-8V48c0-8 4-14 14-18z" fill="#e8613c"/>
+      <rect x="44" y="56" width="32" height="26" rx="5" fill="#f7f3ec"/>
+      <path d="M52 69h16" stroke="#1b2430" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-squeeze" viewBox="0 0 120 120">
+      <ellipse cx="60" cy="106" rx="22" ry="4" fill="#1b2430" opacity=".12"/>
+      <path d="M56 6h8v10h-8z" fill="#1b2430"/>
+      <path d="M46 16h28l4 10H42z" fill="#1b2430"/>
+      <path d="M40 26h40v72a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8z" fill="#9cc9c2"/>
+      <path d="M40 50h40M40 80h40" stroke="#2f6f73" stroke-width="4"/>
+      <circle cx="60" cy="65" r="8" fill="#e8613c"/>
+    </symbol>
+    <symbol id="i-termica" viewBox="0 0 120 120">
+      <ellipse cx="60" cy="106" rx="22" ry="4" fill="#1b2430" opacity=".12"/>
+      <rect x="44" y="8" width="32" height="20" rx="5" fill="#e8613c"/>
+      <rect x="46" y="26" width="28" height="6" fill="#1b2430"/>
+      <rect x="42" y="32" width="36" height="72" rx="10" fill="#c5ccd3"/>
+      <rect x="50" y="32" width="5" height="72" fill="#fff" opacity=".6"/>
+      <rect x="42" y="58" width="36" height="20" fill="#2f6f73"/>
+    </symbol>
+    <symbol id="i-caderno" viewBox="0 0 120 120">
+      <ellipse cx="60" cy="104" rx="34" ry="5" fill="#1b2430" opacity=".12"/>
+      <rect x="28" y="14" width="64" height="86" rx="6" fill="#1b2430"/>
+      <rect x="32" y="14" width="60" height="86" rx="5" fill="#2f6f73"/>
+      <rect x="80" y="14" width="5" height="86" fill="#e0b34a"/>
+      <rect x="42" y="38" width="30" height="16" rx="3" fill="#f7f3ec"/>
+      <path d="M62 100v12l4-4 4 4v-12" fill="#e8613c"/>
+    </symbol>
+    <symbol id="i-bloco" viewBox="0 0 120 120">
+      <ellipse cx="60" cy="104" rx="32" ry="5" fill="#1b2430" opacity=".12"/>
+      <rect x="30" y="22" width="60" height="78" rx="4" fill="#fff" stroke="#1b2430" stroke-width="3"/>
+      <rect x="30" y="22" width="60" height="14" rx="4" fill="#e0b34a"/>
+      <g fill="#1b2430"><circle cx="42" cy="22" r="3"/><circle cx="54" cy="22" r="3"/><circle cx="66" cy="22" r="3"/><circle cx="78" cy="22" r="3"/></g>
+      <path d="M40 50h40M40 62h40M40 74h28" stroke="#9cc9c2" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-caneta" viewBox="0 0 120 120">
+      <ellipse cx="60" cy="100" rx="40" ry="5" fill="#1b2430" opacity=".12"/>
+      <g transform="rotate(-40 60 60)">
+        <rect x="14" y="52" width="80" height="16" rx="8" fill="#1b2430"/>
+        <rect x="36" y="52" width="36" height="16" fill="#e8613c"/>
+        <path d="M94 54l16 6-16 6z" fill="#efe6d8" stroke="#1b2430" stroke-width="2"/>
+        <rect x="20" y="46" width="30" height="5" rx="2.5" fill="#1b2430"/>
+      </g>
+    </symbol>
+    <symbol id="i-caneta-bambu" viewBox="0 0 120 120">
+      <ellipse cx="60" cy="100" rx="40" ry="5" fill="#1b2430" opacity=".12"/>
+      <g transform="rotate(-40 60 60)">
+        <rect x="14" y="52" width="80" height="16" rx="8" fill="#c9a26b"/>
+        <path d="M38 52v16M62 52v16" stroke="#8a6a3e" stroke-width="2"/>
+        <path d="M94 54l16 6-16 6z" fill="#1b2430"/>
+        <rect x="20" y="46" width="30" height="5" rx="2.5" fill="#2f6f73"/>
+      </g>
+    </symbol>
+    <symbol id="i-mochila" viewBox="0 0 120 120">
+      <ellipse cx="60" cy="108" rx="34" ry="4" fill="#1b2430" opacity=".12"/>
+      <path d="M46 26a14 14 0 0 1 28 0" fill="none" stroke="#1b2430" stroke-width="5"/>
+      <rect x="28" y="24" width="64" height="82" rx="16" fill="#2f6f73"/>
+      <rect x="38" y="62" width="44" height="34" rx="8" fill="#1b2430" opacity=".25"/>
+      <rect x="38" y="62" width="44" height="8" rx="4" fill="#9cc9c2"/>
+      <circle cx="60" cy="44" r="7" fill="#e8613c"/>
+    </symbol>
+    <symbol id="i-ecobag" viewBox="0 0 120 120">
+      <ellipse cx="60" cy="108" rx="32" ry="4" fill="#1b2430" opacity=".12"/>
+      <path d="M44 44V30a16 16 0 0 1 32 0v14" fill="none" stroke="#1b2430" stroke-width="4"/>
+      <path d="M26 42h68l-4 62H30z" fill="#efe6d8" stroke="#1b2430" stroke-width="3" stroke-linejoin="round"/>
+      <circle cx="60" cy="72" r="14" fill="#e8613c"/>
+      <path d="M53 72l5 5 9-10" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-kit" viewBox="0 0 120 120">
+      <ellipse cx="60" cy="106" rx="40" ry="5" fill="#1b2430" opacity=".12"/>
+      <rect x="20" y="50" width="80" height="54" rx="4" fill="#1b2430"/>
+      <rect x="16" y="40" width="88" height="16" rx="4" fill="#e8613c"/>
+      <rect x="54" y="40" width="12" height="64" fill="#f7f3ec"/>
+      <path d="M60 40c-6-14-24-16-24-6 0 7 12 7 24 6zM60 40c6-14 24-16 24-6 0 7-12 7-24 6z" fill="none" stroke="#f7f3ec" stroke-width="4" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-kit-escritorio" viewBox="0 0 120 120">
+      <ellipse cx="60" cy="106" rx="44" ry="5" fill="#1b2430" opacity=".12"/>
+      <rect x="12" y="66" width="96" height="38" rx="4" fill="#1b2430"/>
+      <rect x="22" y="30" width="34" height="46" rx="4" fill="#2f6f73"/>
+      <rect x="62" y="44" width="28" height="32" rx="5" fill="#fff" stroke="#1b2430" stroke-width="2"/>
+      <path d="M90 52h4a8 8 0 0 1 0 16h-4" fill="none" stroke="#fff" stroke-width="4"/>
+      <rect x="18" y="62" width="56" height="6" rx="3" fill="#e0b34a" transform="rotate(-8 46 65)"/>
+      <rect x="12" y="76" width="96" height="6" fill="#e8613c"/>
+    </symbol>
+    <symbol id="i-powerbank" viewBox="0 0 120 120">
+      <ellipse cx="60" cy="106" rx="30" ry="4" fill="#1b2430" opacity=".12"/>
+      <rect x="34" y="16" width="52" height="86" rx="10" fill="#1b2430"/>
+      <rect x="40" y="22" width="40" height="74" rx="7" fill="#2f6f73"/>
+      <path d="M64 36L50 62h12l-6 22 16-30H60z" fill="#e0b34a"/>
+      <rect x="52" y="10" width="16" height="8" rx="2" fill="#1b2430"/>
+    </symbol>
+    <symbol id="i-pendrive" viewBox="0 0 120 120">
+      <ellipse cx="60" cy="100" rx="38" ry="5" fill="#1b2430" opacity=".12"/>
+      <g transform="rotate(-30 60 60)">
+        <rect x="76" y="50" width="22" height="20" rx="2" fill="#c5ccd3" stroke="#1b2430" stroke-width="2"/>
+        <rect x="84" y="56" width="5" height="4" fill="#1b2430"/><rect x="84" y="62" width="5" height="4" fill="#1b2430"/>
+        <rect x="22" y="44" width="58" height="32" rx="8" fill="#e8613c"/>
+        <path d="M22 44h52v32H22" fill="none" stroke="#1b2430" stroke-width="3"/>
+        <circle cx="32" cy="60" r="4" fill="#f7f3ec"/>
+      </g>
+    </symbol>
+    <symbol id="i-wireless" viewBox="0 0 120 120">
+      <ellipse cx="60" cy="96" rx="44" ry="7" fill="#1b2430" opacity=".12"/>
+      <ellipse cx="60" cy="80" rx="42" ry="14" fill="#1b2430"/>
+      <ellipse cx="60" cy="74" rx="42" ry="14" fill="#9cc9c2"/>
+      <ellipse cx="60" cy="74" rx="16" ry="5.5" fill="#e8613c"/>
+      <path d="M44 46a22 22 0 0 1 32 0M50 54a12 12 0 0 1 20 0" fill="none" stroke="#2f6f73" stroke-width="4" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="f-chat" viewBox="0 0 48 48"><path d="M8 10h32a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H20l-8 7v-7H8a4 4 0 0 1-4-4V14a4 4 0 0 1 4-4z" fill="#e8613c"/><path d="M14 20h20M14 26h12" stroke="#fff" stroke-width="3" stroke-linecap="round"/></symbol>
+    <symbol id="f-art" viewBox="0 0 48 48"><rect x="6" y="8" width="36" height="28" rx="4" fill="#2f6f73"/><path d="M12 30l8-9 6 6 4-4 6 7z" fill="#9cc9c2"/><circle cx="32" cy="16" r="3" fill="#e0b34a"/><path d="M16 42h16" stroke="#1b2430" stroke-width="3" stroke-linecap="round"/></symbol>
+    <symbol id="f-grid" viewBox="0 0 48 48"><rect x="6" y="6" width="16" height="16" rx="3" fill="#e8613c"/><rect x="26" y="6" width="16" height="16" rx="3" fill="#e0b34a"/><rect x="6" y="26" width="16" height="16" rx="3" fill="#2f6f73"/><rect x="26" y="26" width="16" height="16" rx="3" fill="#1b2430"/></symbol>
+    <symbol id="f-box" viewBox="0 0 48 48"><rect x="8" y="20" width="32" height="22" rx="3" fill="#1b2430"/><rect x="5" y="14" width="38" height="9" rx="3" fill="#e8613c"/><rect x="21" y="14" width="6" height="28" fill="#f7f3ec"/></symbol>
+  </svg>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
